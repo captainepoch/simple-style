@@ -1,0 +1,31 @@
+{{ define "main" -}}
+<div class="title">
+  <h1>{{ .Title }}</h1>
+  {{ with .Params.Subtitle -}}
+  <h2>{{ . }}</h2>
+  {{ end -}}
+</div>
+<div class="meta">
+  {{ if .Date -}}
+  <span>
+	<time>
+		{{ .Date.Format (default "02 Jan 2006" .Site.Params.dateFmt) }}
+	</time>
+  </span>
+  {{ end -}}
+  <span class="padding_left_7"><a href="{{ .Permalink }}">Permalink</a></span>
+  {{ if .Params.showCategories }}
+	{{ if .Params.categories -}}
+		<span class="padding_left_7">Categories:</span>
+		<span>
+		{{ range .Params.categories -}}
+			<a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+		{{ end -}}
+		</span>
+	{{ end -}}
+  {{ end -}}
+</div>
+<div class="content">
+  {{ .Content -}}
+</div>
+{{ end -}}

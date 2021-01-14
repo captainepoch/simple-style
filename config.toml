@@ -1,0 +1,112 @@
+baseurl = "https://domain.tld"
+title = "Blog Title"
+languageCode = "es"
+defaultContentLanguage = "es-es"
+enableInlineShortcodes = true
+footnoteReturnLinkContents = "^"
+
+# Theme to use
+theme = "simple-style"
+
+# Copyright
+copyright = "© 2014-2020. AUTHOR. All rights reserved."
+
+# Pagination
+paginate = 10
+paginatePath = "page"
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Links format
+[permalinks]
+  post = "/:year/:month/:slug/"
+  page = "/:slug/"
+
+[params]
+  referrer = "always"
+  dateFmt  = "January 2, 2006"
+  author = "Author Surname"
+  description = """
+  Description of this blog
+  """
+  keywords = "some, comma, separated, keywords"
+  favicon = "/img/favicon.ico"
+
+# Menu
+## Put any entry you want, with the weight you want.
+[menu]
+  [[menu.footer]]
+    url = "/license/"
+    name = "License"
+    weight = 1
+  [[menu.footer]]
+    url = "/privacy-policy/"
+    name = "Privacy Policy"
+    weight = 2
+  [[menu.footer]]
+    url = "https://github.com/username"
+    name = "Git"
+    weight = 3
+  [[menu.footer]]
+    url = "/index.xml"
+    name = "RSS"
+    weight = 4
+
+# Output formats
+[outputFormats]
+  [outputFormats.RSS]
+    mediatype = "application/rss"
+    baseName = "index"
+
+# Setup goldmark
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+	[markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = false
+      xhtml = false
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+	lineNumbersInTable = true
+    noClasses = true
+    style = "native"
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
+# Disable services
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
